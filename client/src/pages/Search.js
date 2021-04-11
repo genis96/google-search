@@ -8,6 +8,28 @@ class Search extends React.Component {
         books: [],
         value: ""
     };
+
+    componentDidMount() {
+        this.searchBook();
+    }
+
+    handleSubmitForm = e => {
+        e.preventDefault();
+        this.searchBook(this.state.search);
+    };
+
+
+    render() {
+        return (
+            <div>
+                <Form>
+                    search={this.state.search}
+                    handleSubmitForm={this.handleSubmitForm}
+                    handleInputChange={this.handleInputChange}
+                </Form>
+            </div>
+        )
+    }
 }
 
 export default Search;
