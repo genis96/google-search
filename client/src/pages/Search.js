@@ -13,6 +13,12 @@ class Search extends React.Component {
         this.searchBook();
     }
 
+    searchBook = query => {
+        API.getBook(query) 
+            .then(res => this.setState({ books: res.data.items.map(bookData => this.makeNewBook(bookData)) }))
+            .catch(err => console.error(err));
+    };
+
     handleInputChange = e => {
         const name = e.target.name;
         const value = e.target.value;
