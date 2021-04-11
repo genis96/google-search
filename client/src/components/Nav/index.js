@@ -14,10 +14,16 @@ function Nav() {
                         to="/search"
                         />
                     </li>
+                    <li className="nav-item">
+                        <Link
+                        className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                        to="/saved"
+                        />
+                    </li>
                 </ul>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Nav;
