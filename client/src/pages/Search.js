@@ -13,6 +13,14 @@ class Search extends React.Component {
         this.searchBook();
     }
 
+    handleInputChange = e => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value
+        });
+    };
+
     handleSubmitForm = e => {
         e.preventDefault();
         this.searchBook(this.state.search);
@@ -24,7 +32,7 @@ class Search extends React.Component {
             <div>
                 <Form>
                     search={this.state.search}
-                    handleSubmitForm={this.handleSubmitForm}
+                    handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
                 </Form>
             </div>
