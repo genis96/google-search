@@ -13,6 +13,20 @@ class Search extends React.Component {
         this.searchBook();
     }
 
+    // GET https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key=yourAPIKey
+
+    // volumeInfo, thumbnail, imageLinks
+    makeNewBook = bookData => {
+        return {
+            _id: bookData.id,
+            title: bookData.volumeInfo.title,
+            authors: bookData.volumeInfo.authors,
+            description: bookData.volumeInfo.description,
+            image: bookData.volumeInfo.imageLinks.thumbnail,
+            link: bookData.volumeInfo.link
+        }
+    }
+
     searchBook = query => {
         API.getBook(query) 
             .then(res => this.setState({ books: res.data.items.map(bookData => this.makeNewBook(bookData)) }))
