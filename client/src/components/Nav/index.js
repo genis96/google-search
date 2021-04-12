@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Nav/style.css";
+import "./style.css";
 
 function Nav() {
     return (
-        <nav className="navbar navbar-expand-lg">
+        <nav className="navbar navbar-expand-lg text-dark">
             <div>
-                <Link className="navbar-brand" to="/"></Link>
+                <Link className="navbar-brand" to="/">Books</Link>
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link
-                        className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
                         to="/search"
-                        />
+                        className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"} 
+                        >Search </Link>
                     </li>
                     <li className="nav-item">
                         <Link
-                        className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
                         to="/saved"
-                        />
+                        className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                        >Save </Link>
                     </li>
                 </ul>
             </div>
