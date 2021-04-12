@@ -12,6 +12,16 @@ class Results extends Component {
         .catch(err => console.error(err));
     }
 
+    handleSave = book => {
+        if(this.state.savedBooks.map(book => book._id).includes(book._id)) {
+
+        } else {
+            API.saveBook(book)
+            .then(savedBook => this.setState({ savedBooks: this.state.savedBooks.concat([savedBook]) }))
+            .catch(err => console.error(err));
+        }
+    }
+
     render() {
         return (
             <div>
