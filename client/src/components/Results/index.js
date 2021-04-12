@@ -28,10 +28,17 @@ class Results extends Component {
                                     <div className="col-md-10">
                                         <div className="card-body">
                                             <h4 className="card-title">{result.title} by: {result.authors}</h4>
+                                            <p className="card-text">{result.description}</p>
+                                            <div>
+                                                <a target="_blank" className="btn badge-pill btn-outline-dark mt-2" href={ result.link }>Links</a>
+                                                <button onClick={() => this.handleSave(result)} className="btn badge-pill btn-outline-primary ml-3 mt-3">
+                                                    { this.state.savedBooks.map(book => book._id).includes(result._id) ? "Unsave" : "Save" }
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         )) }
                     </div>
                 )}
