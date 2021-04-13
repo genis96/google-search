@@ -76,8 +76,4 @@ In this activity, you'll create a new React-based Google Books Search app. This 
 
   * [Socket.io NPM package](https://www.npmjs.com/package/socket.io)
 
-### Reminder: Submission on BCS
 
-* **This assignment must be deployed.** * Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
-
-- - -
